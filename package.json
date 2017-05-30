@@ -1,0 +1,14 @@
+{
+  "name": "wI18n-issue50",
+  "version": "1.0.0",
+  "description": "Reproduce https://github.com/webpack-contrib/i18n-webpack-plugin/issues/50",
+  "main": "index.js",
+  "repository": "git@github.com:hovissimo/wI18n-issue50.git",
+  "author": "Hovis <github@bunkercode.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "i18n-webpack-plugin": "^0.3.0",
+    "path": "^0.12.7",
+    "webpack": "^2.6.1"
+  }
+}
