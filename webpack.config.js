@@ -14,6 +14,18 @@ module.exports = Object.keys(languages).map(function(language) {
 			path: path.join(__dirname, 'output'),
 			filename: `bundle-${language}.js`,
 		},
+		module: {
+			loaders: [
+				{
+					test: /\.js$/,
+					loader: 'babel-loader',
+					exclude: /node_modules/,
+					options: {
+						presets: ['es2015', 'react'],
+					}
+				},
+			],
+		},
 		plugins: [
 			new I18nPlugin( languages[language] ),
 		],
