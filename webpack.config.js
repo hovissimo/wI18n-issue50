@@ -15,7 +15,7 @@ const postcssOpts = { plugins: [ autoprefixer(autoprefixerOpts)], sourceMap: tru
 
 module.exports = Object.keys(languages).map(function(language) {
 	return {
-		entry: './index.js',
+		entry: ['babel-polyfill', './index.js'],
 		output: {
 			path: path.join(__dirname, 'output'),
 			filename: `bundle-${language}.js`,

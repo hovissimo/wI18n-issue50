@@ -7,6 +7,7 @@
   "author": "Hovis <github@bunkercode.com>",
   "license": "GPL-3.0",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "i18n-webpack-plugin": "^0.3.0",
     "path": "^0.12.7",
