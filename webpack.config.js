@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const I18nPlugin = require('i18n-webpack-plugin')
 const path = require('path')
 const StatsPlugin = require('stats-webpack-plugin');
+const webpack = require('webpack')
 
 const languages = {
 	'en': null,
@@ -53,6 +54,15 @@ module.exports = Object.keys(languages).map(function(language) {
 				assets: true
 			}),
 			new ExtractTextPlugin('bundle.css'),
+			new webpack.ContextReplacementPlugin(/^\.\/locale$/, context => {                        
+				if (!/\/moment\b/.test(context.context)) { return }                                    
+
+				Object.assign(context, { // context needs to be modified in place                      
+					// by default this loads ./.* from locale/, but we only want the languages we use    
+					// en-us is the default and is automatically included                                
+					regExp: /^\.\/(de|es|fr|hy-am|ja|ru)\./,                                             
+				})                                                                                     
+			}),                                                                                      
 		],
 	}
 })
