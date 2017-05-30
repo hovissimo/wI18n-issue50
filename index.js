@@ -1,10 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import DatePicker from 'react-datepicker'
 
 class Reproducer extends React.Component {
 	render() {
 		let foobar = this.props.maybe ? __("foo") : __("bar")           
-		return <div>{foobar}</div>;                                                                              
+		return <div>{foobar}
+		<DatePicker />
+			</div>;                                                                              
 	}
 }
 
