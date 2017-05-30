@@ -20,6 +20,9 @@ module.exports = Object.keys(languages).map(function(language) {
 			path: path.join(__dirname, 'output'),
 			filename: `bundle-${language}.js`,
 		},
+		stats: {
+			children: false, // Hushes some of the output from the build process, can be safely removed
+		},
 		module: {
 			loaders: [
 				{
