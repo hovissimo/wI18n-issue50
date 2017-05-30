@@ -40,6 +40,10 @@ module.exports = Object.keys(languages).map(function(language) {
 							{loader: 'sass-loader', options: {sourceMap: true}},
 						],
 					}),
+				},
+				{
+					test: /\.(jpg|jpeg|gif|png)$/,
+					loader: 'url-loader?limit=1000&name=[path][name].[hash].[ext]',
 				}
 			],
 		},
