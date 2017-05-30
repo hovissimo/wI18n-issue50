@@ -70,6 +70,14 @@ module.exports = Object.keys(languages).map(function(language) {
 					regExp: /^\.\/(de|es|fr|hy-am|ja|ru)\./,                                             
 				})                                                                                     
 			}),                                                                                      
+			new webpack.NoEmitOnErrorsPlugin(),
+			new webpack.optimize.UglifyJsPlugin({
+				compress: { warnings: false },
+			}),
+			new webpack.DefinePlugin({
+				'process.env': { NODE_ENV: JSON.stringify('production') }
+			})
 		],
+		devtool: 'inline-source-map',
 	}
 })
